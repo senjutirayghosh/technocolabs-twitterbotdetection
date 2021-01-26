@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Bots in the Net</title>
+	
+</head>
+
+<body>
+	
+	<header>
+		
+		<div class="container">
+		<h2>Twitter Bot Detection</h2>
+		
+	</div>
+	</header>
+	
+		
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Your Tweet Here:</p>
+		<textarea name="message" rows="6" cols="30"></textarea>
+		<br/>
+
+		<input type="submit" class="btn-info" value="Predict">
+		
+	</form>
+	</div>
+		
+	<br>
+	
+	<div class = "results">
+	
+    	{% if prediction == 1%}
+    	<h2> Bot </h2>
+    	{% elif prediction == 0%}
+    	<h2> Not a Bot </h2>
+    	{% endif %}
+	
+	</div>
+	
+</body>
+</head>
+		
